@@ -31,7 +31,7 @@ let editable_name
   let fake_input =
     span ~a:[a_contenteditable `True ]
       [pcdata default_name] in
-  let btn_icon title content =
+  let btn_icon title content : [> `A of [> `PCDATA ] ] Eliom_content.Html5.D.Raw.elt =
     D.Raw.a ~a:[ a_title title ; a_class ["link"] ]
       [content] in
   let edit = btn_icon "Edit name" (Option.get (fun () -> pcdata "✍") edit) in
